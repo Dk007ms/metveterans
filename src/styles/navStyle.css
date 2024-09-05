@@ -1,0 +1,11 @@
+.marquee {
+    width: 100%;  /* Full-width container */
+    white-space: nowrap;  /* Prevent text from wrapping */
+    box-sizing: border-box;  /* Include padding in width calculation */
+    animation: marquee 48s linear infinite;  /* Animation details */
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }  /* Start position (off-screen to the right) */
+    100% { transform: translateX(-100%); }  /* End position (off-screen to the left) */
+}
