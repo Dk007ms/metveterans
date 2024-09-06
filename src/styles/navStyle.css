@@ -1,4 +1,6 @@
 .marquee {
+    position: sticky;
+    top: 0;
     width: 100%;  /* Full-width container */
     white-space: nowrap;  /* Prevent text from wrapping */
     box-sizing: border-box;  /* Include padding in width calculation */
