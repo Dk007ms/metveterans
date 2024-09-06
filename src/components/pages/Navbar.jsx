@@ -8,20 +8,13 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import links from "../../data/navlinks";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 function Navbar() {
-  const navAnimation=useRef(null);
-
- 
 
   return (
-    <div className="overflow-x-clip sticky top-14 z-50">
+    <div className="overflow-x-clip sticky -top-14 z-40">
       {/* Navbar Section */}
-      <div ref={navAnimation} className="flex items-center justify-between bg-white p-4 px-16 shadow-md relative">
+      <div className="flex items-center justify-between bg-white p-4 px-16 shadow-md relative">
         <div className="flex items-center">
           <img src="/logo.png" alt="logo" className="h-20 w-20" />
           <div className="ml-8 text-left">
@@ -86,11 +79,9 @@ function Navbar() {
       </div>
 
       {/* Main Nav Section */}
-      <nav
-        className="w-full bg-white h-20 flex items-center justify-between px-16 border-y-2 border-[#DCDCDC]"
-      >
-        <button className="font-extrabold">MENU</button>
-        <div className="flex items-center justify-center gap-16">
+      <nav className="w-full bg-white h-20 flex items-center justify-between px-16 border-y-2 border-[#DCDCDC]">
+        <button className="font-extrabold right-6 relative">MENU</button>
+        <div className="flex items-center justify-center gap-16 border-x-[1px] border-[#CECECE] px-6">
           {links.map((link) => (
             <a
               key={link}
@@ -101,7 +92,7 @@ function Navbar() {
             </a>
           ))}
         </div>
-        <button className="bg-[#DE2A1B] text-white font-semibold text-base px-6 py-3 rounded hover:bg-red-700 transition-colors duration-300">
+        <button className="bg-[#DE2A1B] text-white font-semibold text-base px-6 py-3 rounded hover:bg-red-700 transition-colors duration-300 left-6 relative">
           DONATE NOW
         </button>
       </nav>
