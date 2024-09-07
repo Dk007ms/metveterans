@@ -166,7 +166,7 @@ const Home = () => {
         {/* Section 2: Volunteer Call to Action */}
         <div className="bg-blue-800 py-24 text-center mb-16 relative">
           <img
-            src="/assets/volunteerbackground.png"
+            src="/assets/volunteerBackground.png"
             alt="volunteerbackground"
             className="absolute bottom-0 z-10"
           />
