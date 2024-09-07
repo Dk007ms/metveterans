@@ -34,8 +34,8 @@ const ImageCarousel = () => {
           x: {
             repeat: Infinity,
             repeatType: "mirror", // Alternates direction
-            duration: 50, // Adjust the duration for speed
-            ease: easeIn,
+            duration: 40, // Adjust the duration for speed
+            ease: "linear",
           },
         },
       });
@@ -74,10 +74,10 @@ const ImageCarousel = () => {
   };
 
   return (
-    <div className="overflow-clip w-[75%]">
+    <div className="overflow-clip w-[75%] mb-16">
       <motion.div
         ref={carouselRef}
-        className="flex"
+        className="flex cursor-pointer"
         style={{ x }}
         drag="x"
         dragConstraints={constraints}
@@ -90,7 +90,7 @@ const ImageCarousel = () => {
             <img
               src={image}
               alt={`Carousel item ${index}`}
-              className="w-full h-full object-cover rounded-lg shadow-md"
+              className="w-full h-full object-cover rounded-lg shadow-md pointer-events-none"
             />
           </div>
         ))}
