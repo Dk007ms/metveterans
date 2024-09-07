@@ -6,6 +6,7 @@ import cardData from "../../data/card-data";
 import SectionCard from "../comman/SectionCard";
 import SocialCauseCard from "../comman/socialCauseCard";
 import socialCauses from "../../data/social-causes";
+import ImageCarousel from "../comman/Image-carousel";
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -126,37 +127,54 @@ const Home = () => {
       <div></div>
       {/* <-------------------------------------------------------------------------------------------facilities-and-social-Section----------------------------------------------------------------------------------------------------------> */}
 
-      <div>
-        {" "}
-        <div className="py-10 bg-gray-100">
+      <div className="flex flex-col justify-center items-center bg-gray-100">
+        <div>
+          {" "}
+          <div className="py-10">
+            <div className="container mx-auto px-28 flex flex-wrap justify-center">
+              <h2 className="text-3xl font-bold text-center mb-10">
+                Our Facilities
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+                {cardData.map((section) => (
+                  <SectionCard key={section.id} section={section} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <-------------------------------------------------------------------------------------------social-causes----------------------------------------------------------------------------------------------------------> */}
+        <div className="py-10">
           <div className="container mx-auto px-28">
             <h2 className="text-3xl font-bold text-center mb-10">
-              Our Facilities
+              Our Social Causes
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-              {cardData.map((section) => (
-                <SectionCard key={section.id} section={section} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {socialCauses.map((cause) => (
+                <SocialCauseCard key={cause.id} cause={cause} />
               ))}
             </div>
           </div>
         </div>
-      </div>
-      {/* <-------------------------------------------------------------------------------------------social-causes----------------------------------------------------------------------------------------------------------> */}
-      <div className="py-10 bg-gray-100">
-        <div className="container mx-auto px-28">
-          <h2 className="text-3xl font-bold text-center mb-10">
-            Our Social Causes
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {socialCauses.map((cause) => (
-              <SocialCauseCard key={cause.id} cause={cause} />
-            ))}
+
+        <button className="text-white bg-red-500 hover:bg-red-600 font-semibold px-4 py-2 w-28 h-10 rounded mb-16">
+          View More
+        </button>
+        {/* <-------------------------------------------------------------------------------------------joining-and-donation----------------------------------------------------------------------------------------------------------> */}
+
+        <div className="flex justify-center gap-16 mb-16">
+          <div className="w-[530px] h-[293px] bg-[#1B3A8A] rounded-[20px]">
+            <img src="/assets/div-cutout.png" alt="div-cutout" />
+          </div>
+          <div className="w-[530px] h-[293px] bg-[#DE2A1B] rounded-[20px]">
+            <img src="/assets/div-cutout.png" alt="div-cutout" />
           </div>
         </div>
-      </div>
-      {/* <-------------------------------------------------------------------------------------------joining-and-donation----------------------------------------------------------------------------------------------------------> */}
 
-      <div></div>
+        {/* <-------------------------------------------------------------------------------------------gallery-slider----------------------------------------------------------------------------------------------------------> */}
+        <div className="mb-8">Our Photo Gallery</div>
+        <ImageCarousel/>
+      </div>
     </>
   );
 };
