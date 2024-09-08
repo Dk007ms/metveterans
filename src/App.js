@@ -7,6 +7,7 @@ import Membership from "./components/core/Membership";
 import ExecutiveCommittee from "./components/core/ExecutiveCommittee";
 import Election from "./components/core/Election";
 import Subscription from "./components/core/Subscription";
+import SubscriptionDetails from "./components/core/SubscriptionDetails";
 import FoundingMembers from "./components/core/FoundingMembers";
 import Members from "./components/core/Members";
 import Contact from "./components/pages/Contact";
@@ -28,6 +29,10 @@ function App() {
           <Route path="/executive-committee" element={<ExecutiveCommittee />} />
           <Route path="/election" element={<Election />} />
           <Route path="/subscription" element={<Subscription />} />
+          <Route
+            path="/SubscriptionDetails"
+            element={<SubscriptionDetails />}
+          />
           <Route path="/founding-members" element={<FoundingMembers />} />
           <Route path="/members" element={<Members />} />
         </Route>
